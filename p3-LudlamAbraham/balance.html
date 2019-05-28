@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<body onload="loadDoc()">
+<div>
+<h3> Account: </h3>
+</div>
+<div id="accounts">
+
+
+
+</div>
+<div>
+<h3> Balance: </h3>
+</div>
+<div id="currentBalance">
+
+</div>
+
+<script>
+function loadDoc() {
+var parser, xmlDoc;
+	parser = new DOMParser();
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    //xmlDoc = parser.parseFromString(this.responseText, "text/xml")
+      document.getElementById("accounts").innerHTML =
+      this.responseText;
+     
+    }
+  };
+  var xhttp2 = new XMLHttpRequest();
+  xhttp2.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("notthis").innerHTML =
+      this.responseText;
+     
+    }
+  };
+  var parser3, xmlDoc3;
+	parser3 = new DOMParser();
+  var xhttp3 = new XMLHttpRequest();
+  xhttp3.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    xmlDoc3 = parser3.parseFromString(this.responseText, "text/xml")
+      document.getElementById("currentBalance").textContent =
+      xmlDoc3.getElementsByTagName("balance")[0].childNodes[0].nodeValue;
+     
+    }
+  };
+
+
+  xhttp.open("POST", "aname", true);
+  xhttp2.open("POST", "notthis", true);
+  xhttp.send();
+  xhttp2.send();
+  xhttp3.open("POST", "currentBalance", true);
+  xhttp3.send();
+}
+</script>
+</body>
+<head>
+		<meta charset="utf-8">
+		
+		<style>
+		.login-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-form h1 {
+			text-align: left;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="number"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			margin-bottom: 15px;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="login-form">
+		
+			<form action="/deposit" method="POST">
+				<input type="number" name="depo" pattern= ".{1,128}" title="No more than 128 characters" placeholder="0.00" step=".01" min="0"  required>
+				<input type="submit" value="Deposit Amount">
+			</form>
+		</div>
+	</body>
+	
+	<style>
+		.login-fo {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-fo h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-fo input[type="password"],
+		.login-fo input[type="number"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-fo input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			margin-bottom: 15px;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="login-fo">
+		
+			<form action="/withdraw" method="POST">
+				<input type="number" name="witha" pattern= ".{1,128}" title="No more than 128 characters" placeholder="0.00" step=".01" required>
+				<input type="submit" value="Withdraw Amount">
+			</form>
+		</div>
+	</body>
+	<style>
+		.login-for {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-for h1 {
+			text-align: right;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-for input[type="password"],
+		.login-for input[type="number"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		
+		</style>
+	</head>
+	<body>
+	<div class="login-for">
+	<form action="/transfer" method="POST">
+		<input type="number" name="trans" pattern= ".{1,128}" title="No more than 128 characters" placeholder="0.00" step=".01" required>
+<input type="submit" value="Transfer Amount to chosen account">
+<select id="notthis" name="chosen">
+</select>
+
+</form>
+</div>
+<div>
+		<form action="/dashboard" method="GET">
+				
+				<input type="submit" value="Go Back">
+
+		</div>
+</body>
+
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bank.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bleach": "^0.3.0",
+    "client-sessions": "^0.8.0",
+    "helmet": "^3.16.0",
+    "uuid": "^3.3.2",
+    "xml2js": "^0.4.19",
+    "xss-filters": "^1.2.7"
+  }
+}

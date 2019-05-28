@@ -1,0 +1,21 @@
+*THIS FILE IS NO LONGER USED*
+
+savings, nosadjay, 105
+nowt, nosadjay, 49
+nosasdads, nosadjay, 123
+checkings, nosadjay, 0
+checkings, abrahamlum, 0
+savings, abrahamlum, 0
+savin, abrahamlum, 0
+savin, , 0
+saving, abrahamlum, 0
+savasd, abrahamlum, 0
+mf, Look l, 0
+mg mf, Look l, 248.88
+lf lf, nosadjay, 0
+My Checking, mikhail, 89899.9
+My Savings, mikhail, 0
+hacking, mikhail, 0
+dsfsdf"><!--, mikhail, 0
+dsfsdf">ipt>alert('XSS');pt><!--, mikhail, 0
+dsfsdf"><b>alert('XSS1');</b><!--, mikhail, 0

@@ -1,6 +1,6 @@
 Abraham Ludlam - LudlamAbraham@csu.fullerton.edu or abeludlam@gmail.com
 
-This node.js application and server was made for local use on a Linux system, in this case Ubuntu 16.04.
+This node.js application and server were made for local use on a Linux system, in this case Ubuntu 16.04.
 
 Go to the directory of the folder. Install the requested libraries and packages as listed:
 "npm install express"
